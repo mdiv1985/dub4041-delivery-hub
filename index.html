@@ -1,0 +1,284 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>DUB 40/41 Delivery Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root{
+      --brand:#0078D4; --brand-600:#106EBE; --accent:#00B294;
+      --bg:#fff; --ink:#1a1a1a; --muted:#616161;
+      --card:#f6f8fb; --card-alt:#eef2f8; --border:#d8dee9;
+      --focus:#ffbf47; --danger:#C50F1F; --warn:#FF8C00; --ok:#107C10;
+      --shadow:0 2px 8px rgba(0,0,0,.06); --radius:12px;
+      --space:20px; --space-sm:12px; --maxw:1220px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0; font:16px/1.5 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; color:var(--ink); background:var(--bg)}
+    .page{max-width:var(--maxw); margin:auto; padding:28px var(--space)}
+    header{margin-bottom:var(--space)}
+    .title{display:flex; flex-wrap:wrap; gap:var(--space-sm); align-items:flex-end}
+    .title h1{margin:0; font-size:clamp(24px, 2.6vw, 40px)}
+    .subtitle{margin:0; color:var(--muted)}
+    .toolbar{margin-top:var(--space); display:flex; flex-wrap:wrap; gap:var(--space-sm)}
+    .toolbar a{text-decoration:none; color:#fff; background:var(--brand); padding:10px 14px; border-radius:8px; box-shadow:var(--shadow)}
+    .toolbar a:hover{background:var(--brand-600)}
+    .meta{margin-top:12px; font-size:14px; color:var(--muted); display:flex; gap:18px; align-items:center; flex-wrap:wrap}
+    .badge{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; background:var(--card)}
+    .dot{width:8px; height:8px; border-radius:50%}
+    .dot.ok{background:var(--ok)} .dot.warn{background:var(--warn)} .dot.danger{background:var(--danger)}
+    section{margin-top:24px}
+    section > h2{margin:0 0 12px 0; font-size:clamp(18px, 2vw, 24px); border-left:4px solid var(--brand); padding-left:12px}
+    .cards{display:grid; gap:12px; grid-template-columns:repeat(auto-fill, minmax(210px, 1fr))}
+    .card{background:linear-gradient(180deg, var(--card), var(--card-alt)); border:1px solid var(--border); border-radius:12px; padding:16px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:10px; min-height:120px}
+    .card h3{margin:0; font-size:16px}
+    .card p{margin:0; color:var(--muted); font-size:14px}
+    .card a{margin-top:auto; align-self:flex-start; text-decoration:none; color:#fff; background:var(--brand); padding:8px 12px; border-radius:8px}
+    .card a:hover{background:var(--brand-600)}
+    .pills{display:flex; flex-wrap:wrap; gap:10px}
+    .pill{text-decoration:none; color:var(--ink); background:var(--card); border:1px solid var(--border); padding:10px 14px; border-radius:999px; box-shadow:var(--shadow)}
+    .pill:hover{border-color:var(--brand)}
+    .workstreams{display:grid; gap:12px}
+    details{background:var(--card); border:1px solid var(--border); border-radius:10px; box-shadow:var(--shadow)}
+    summary{list-style:none; cursor:pointer; padding:14px 16px; font-weight:600; display:flex; align-items:center; gap:10px}
+    summary::-webkit-details-marker{display:none}
+    details[open] summary{border-bottom:1px solid var(--border); background:rgba(0,0,0,0.02)}
+    .ws-content{padding:14px 16px}
+    .links{display:grid; gap:8px}
+    .links a{text-decoration:none; color:var(--brand)}
+    .links a:hover{text-decoration:underline}
+    a:focus, button:focus, summary:focus{outline:3px solid var(--focus); outline-offset:3px; border-radius:6px}
+    footer{margin:40px 0 10px; color:var(--muted); font-size:13px}
+  </style>
+</head>
+<body>
+  <div class="page" role="document">
+    <header>
+      <div class="title" aria-label="Page title">
+        <h1>DUB 40/41 Delivery Hub</h1>
+        <p class="subtitle">Central hub for dashboards, trackers &amp; project controls.</p>
+      </div>
+
+      <!-- Toolbar -->
+      <nav class="toolbar" aria-label="Top navigation">
+        <a href="#" data-link="TODO">Contacts</a>
+        <a href="#" data-link="TODO">Site Logistics</a>
+        <a href="https://microsofteur.sharepoint.com/teams/DUBMetroProjectControlHub/_layouts/15/Doc.aspx?sourcedoc=%7B8B6E1BA0-C373-49BB-B41E-BDED9F90BCE6%7D&file=DUB%2040-41%20Live%20Weekly%20Report.pptx&action=edit&mobileredirect=true&DefaultItemOpen=1" target="_blank" rel="noopener">Weekly Status</a>
+      </nav>
+
+      <!-- Executive snapshot -->
+      <div class="meta" aria-label="Executive snapshot">
+        <span class="badge"><span class="dot ok" aria-hidden="true"></span>Safety: On track</span>
+        <span class="badge"><span class="dot warn" aria-hidden="true"></span>Programme: At risk</span>
+        <span class="badge"><span class="dot danger" aria-hidden="true"></span>Blockers: 3</span>
+        <span>Last updated: <time datetime="2026-01-05">05 Jan 2026</time></span>
+      </div>
+    </header>
+
+    <!-- QUICK ACCESS -->
+    <section aria-labelledby="quick-access">
+      <h2 id="quick-access">Quick Access</h2>
+      <div class="pills">
+        <a class="pill" href="https://acc.autodesk.com/build/issues/projects/12bc4f68-770a-42f8-9fa0-784e2c0637c4/issues" target="_blank" rel="noopener">Issues</a>
+        <a class="pill" href="https://www.enablon.ehs.microsoft.com/app/go.aspx?u=/ho/DB&su=ho%21-1&pm=0" target="_blank" rel="noopener">Enablon</a>
+        <a class="pill" href="https://acc.autodesk.com/build/rfis/projects/12bc4f68-770a-42f8-9fa0-784e2c0637c4" target="_blank" rel="noopener">RFIs</a>
+        <a class="pill" href="https://acc.autodesk.com/build/submittals/projects/12bc4f68-770a-42f8-9fa0-784e2c0637c4" target="_blank" rel="noopener">Submittals</a>
+        <a class="pill" href="https://coinexus.microsoft.com/" target="_blank" rel="noopener">Nexus</a>
+        <a class="pill" href="https://acc.autodesk.com/docs/files/projects/12bc4f68-770a-42f8-9fa0-784e2c0637c4" target="_blank" rel="noopener">Schedule trackers</a>
+        <a class="pill" href="https://www.dronedeploy.com/app2/projects" target="_blank" rel="noopener">DroneDeploy</a>
+        <a class="pill" href="https://omega365.microsoft.com/link-plans/link-planner2?Plan_ID=10068" target="_blank" rel="noopener">IMS programme</a>
+        <a class="pill" href="https://coinexus.microsoft.com/Projects/aeb3ff0e-e7bb-ed11-83ff-00224827398f" target="_blank" rel="noopener">Cx dashboard</a>
+      </div>
+    </section>
+
+    <!-- PRIMARY DASHBOARDS -->
+    <section aria-labelledby="primary-dashboards">
+      <h2 id="primary-dashboards">Primary Dashboards</h2>
+      <div class="cards">
+        <article class="card" aria-labelledby="dash-safety">
+          <h3 id="dash-safety">Safety dashboard</h3>
+          <p>Daily &amp; weekly HSE snapshots</p>
+          <a href="https://msit.powerbi.com/groups/me/reports/617159e1-b126-4af6-be21-f16a7efda27f/e3c1956444565cbdce5a" target="_blank" rel="noopener">Open</a>
+        </article>
+
+        <article class="card" aria-labelledby="dash-programme">
+          <h3 id="dash-programme">Programme dashboard</h3>
+          <p>IMS, milestones &amp; lookaheads</p>
+          <a href="https://microsoft.sharepoint.com/:x:/t/LinesightDoccontrol/IQB3zLn4C9hmSoJvQv2Aj_POAfGh7873meDyD3F2ZiNQCDM" target="_blank" rel="noopener">Open</a>
+        </article>
+
+        <article class="card" aria-labelledby="dash-quality">
+          <h3 id="dash-quality">Quality dashboard</h3>
+          <p>ITPs, NCRs &amp; punch list trends</p>
+          <a href="https://acc.autodesk.com/docs/files/projects/12bc4f68-770a-42f8-9fa0-784e2c0637c4" target="_blank" rel="noopener">Open</a>
+        </article>
+
+        <article class="card" aria-labelledby="dash-cx">
+          <h3 id="dash-cx">Commissioning / Cx dashboard</h3>
+          <p>System progress &amp; IST readiness</p>
+          <a href="https://coinexus.microsoft.com/Projects/aeb3ff0e-e7bb-ed11-83ff-00224827398f" target="_blank" rel="noopener">Open</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- KEY TRACKERS -->
+    <section aria-labelledby="key-trackers">
+      <h2 id="key-trackers">Key Trackers</h2>
+      <div class="cards">
+        <article class="card" aria-labelledby="trk-rfis">
+          <h3 id="trk-rfis">RFIs register</h3>
+          <p>Design queries &amp; responses</p>
+          <a href="https://acc.autodesk.com/build/rfis/projects/12bc4f68-770a-42f8-9fa0-784e2c0637c4" target="_blank" rel="noopener">Open</a>
+        </article>
+
+        <article class="card" aria-labelledby="trk-submittals">
+          <h3 id="trk-submittals">Submittals tracker</h3>
+          <p>Design approvals &amp; status</p>
+          <a href="https://acc.autodesk.com/build/submittals/projects/12bc4f68-770a-42f8-9fa0-784e2c0637c4/items?page=1&amp;sort=customIdentifier%20desc" target="_blank" rel="noopener">Open</a>
+        </article>
+
+        <article class="card" aria-labelledby="trk-constraints">
+          <h3 id="trk-constraints">Constraints Log</h3>
+          <p>Programme constraints &amp; actions</p>
+          <a href="https://acc.autodesk.com/docs/files/projects/12bc4f68-770a-42f8-9fa0-784e2c0637c4?folderUrn=urn%3Aadsk.wipprod%3Afs.folder%3Aco.cH-pvxmqSYyu-DKjgSSPfQ&amp;entityId=urn%3Aadsk.wipprod%3Adm.lineage%3AiIP1NZXPSGWZZxX4WfwyOw&amp;viewModel=detail&amp;moduleId=folders" target="_blank" rel="noopener">Open</a>
+        </article>
+
+        <article class="card" aria-labelledby="trk-ncrs">
+          <h3 id="trk-ncrs">NCRs tracker</h3>
+          <p>Non‑conformances &amp; close‑out</p>
+          <a href="#" data-link="TODO">Open</a>
+        </article>
+
+        <article class="card" aria-labelledby="trk-change">
+          <h3 id="trk-change">Change log</h3>
+          <p>Commercial changes &amp; claims</p>
+          <a href="https://microsofteur.sharepoint.com/teams/EMEAContractServicesTeam/_layouts/15/Doc.aspx?sourcedoc=%7B5B5A9B7B-1E1C-4AA2-B973-51CBB0232BB6%7D&file=EMEA%20Claims%20%26%20Contracts%20Query%20Log.xlsx&action=default&mobileredirect=true&DefaultItemOpen=1" target="_blank" rel="noopener">Open</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- WORKSTREAMS -->
+    <section aria-labelledby="workstreams">
+      <h2 id="workstreams">Sections (Workstreams)</h2>
+      <div class="workstreams">
+
+        <details>
+          <summary>Safety</summary>
+          <div class="ws-content">
+            <div class="links">
+              <a href="https://www.enablon.ehs.microsoft.com/app/go.aspx?u=/ho/DB&su=ho%21-1&pm=0" target="_blank" rel="noopener">Enablon issues and actions</a>
+              <a href="https://microsofteur.sharepoint.com/:f:/t/DUBMetroProjectControlHub/IgBOgD3KGvIjTYmvc-yVm_SYAfuBlRALGTXuatR3nVe4wHI?e=h8m1bJ" target="_blank" rel="noopener">Weekly safety report</a>
+              <a href="https://microsoft.sharepoint.com/teams/EHSOneStop" target="_blank" rel="noopener">HSE governance pack</a>
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>Design / BIM</summary>
+          <div class="ws-content">
+            <div class="links">
+              <a href="https://node1.build.dalux.com/client/366149995809734656/location/default" target="_blank" rel="noopener">Design model (BIM)</a>
+              <a href="https://acc.autodesk.com/build/rfis/projects/12bc4f68-770a-42f8-9fa0-784e2c0637c4" target="_blank" rel="noopener">Design queries log</a>
+              <a href="https://acc.autodesk.com/build/meetings/projects/12bc4f68-770a-42f8-9fa0-784e2c0637c4" target="_blank" rel="noopener">Coordination meeting minutes</a>
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>Programme</summary>
+          <div class="ws-content">
+            <div class="links">
+              <a href="https://omega365.microsoft.com/link-plans/link-planner2?Plan_ID=10068" target="_blank" rel="noopener">IMS master programme</a>
+              <a href="https://acc.autodesk.com/build/files/projects/12bc4f68-770a-42f8-9fa0" target="_blank" rel="noopener">Lookahead 3 &amp; 6 week</a>
+              <a href="https://coinexus.microsoft.com/Projects/aeb3ff0e-e7bb-ed11-83ff-00224827398f" target="_blank" rel="noopener">Nexus link to DCEP / schedule</a>
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>Quality</summary>
+          <div class="ws-content">
+            <div class="links">
+              <a href="https://microsofteur-my.sharepoint.com/personal/mdivilly_microsoft_com/_layouts/15/Doc.aspx?sourcedoc=%7B331402FA-9457-4B44-89BA-B71B80B805B1%7D&file=01%2040%2000%20-%20Quality%20Requirements%202025%20Rev.0.docx&action=default&mobileredirect=true&DefaultItemOpen=1" target="_blank" rel="noopener">ITPs and checklists</a>
+              <a href="https://acc.autodesk.com/docs/files/projects/12bc4f68-770a-42f8-9fa0-784e2c0637c4" target="_blank" rel="noopener">NCR and punch list dashboard</a>
+              <a href="#" data-link="TODO">QA meeting minutes</a>
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>Cost / Commercial</summary>
+          <div class="ws-content">
+            <div class="links">
+              <a href="#" data-link="TODO">Budget and forecast dashboard</a>
+              <a href="#" data-link="TODO">Pay apps and valuations</a>
+              <a href="https://microsofteur.sharepoint.com/teams/EMEAContractServicesTeam/_layouts/15/Doc.aspx?sourcedoc=%7B5B5A9B7B-1E1C-4AA2-B973-51CBB0232BB6%7D&file=EMEA%20Claims%20%26%20Contracts%20Query%20Log.xlsx&action=default&mobileredirect=true&DefaultItemOpen=1" target="_blank" rel="noopener">Change and claims log</a>
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>OFCI</summary>
+          <div class="ws-content">
+            <div class="links">
+              <a href="https://microsofteur.sharepoint.com/teams/DUBMetroProjectControlHub/_layouts/15/Doc.aspx?sourcedoc=%7BDDE9D2ED-9E3C-47BD-BD31-2D06F5CF317B%7D&file=DUB%2040%2641%20FoK%20%26%20NoK%20OFCI%20%26%20CFCI%20Tracker.xlsx&action=default&mobileredirect=true&DefaultItemOpen=1" target="_blank" rel="noopener">OFCI master tracker</a>
+              <a href="#" data-link="TODO">Delivery and storage log</a>
+              <a href="#" data-link="TODO">Commercial OFCI summary</a>
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>Commissioning / Cx</summary>
+          <div class="ws-content">
+            <div class="links">
+              <a href="https://microsofteur.sharepoint.com/teams/DUBMetroProjectControlHub/Shared%20Documents/01.%20DUB%2040-41/14%20P.A.T/Commissioning/WT-CX-06.03.01.01%20-%20DUB40-41%20-%20CIP%20Rev%2000.pdf?web=1" target="_blank" rel="noopener">Cx progress tracker</a>
+              <a href="#" data-link="TODO">Test packs and forms</a>
+              <a href="#" data-link="TODO">IST readiness dashboard</a>
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>Environmental / ESG</summary>
+          <div class="ws-content">
+            <div class="links">
+              <a href="#" data-link="TODO">RWMP and water reporting</a>
+              <a href="#" data-link="TODO">Waste and recycling logs</a>
+              <a href="https://microsofteur.sharepoint.com/teams/Dub4041831/_layouts/15/Doc.aspx?sourcedoc=%7B63962C28-B997-4BE3-8667-ED5FA2620D8A%7D&file=DUB40-41%20-%20Sustainability%20Opportunity%20Tracker%20(live).xlsx&action=default&mobileredirect=true&DefaultItemOpen=1" target="_blank" rel="noopener">ESG reporting pack</a>
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>Logistics / Site Ops</summary>
+          <div class="ws-content">
+            <div class="links">
+              <a href="https://microsoft.sharepoint.com/teams/LinesightDoccontrol/_layouts/15/Doc.aspx?sourcedoc=%7BF81C39E8-E369-4DEC-90F4-23C874D41C5F%7D&file=DUB40-41PEP%20presentation.pptx&action=edit&mobileredirect=true&DefaultItemOpen=1" target="_blank" rel="noopener">Site logistics plan</a>
+              <a href="#" data-link="TODO">Delivery booking system</a>
+              <a href="#" data-link="TODO">Logistics meeting notes</a>
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>Reports / Governance</summary>
+          <div class="ws-content">
+            <div class="links">
+              <a href="https://microsofteur.sharepoint.com/teams/DUBMetroProjectControlHub/_layouts/15/Doc.aspx?sourcedoc=%7B8B6E1BA0-C373-49BB-B41E-BDED9F90BCE6%7D&file=DUB%2040-41%20Live%20Weekly%20Report.pptx&action=edit&mobileredirect=true&DefaultItemOpen=1" target="_blank" rel="noopener">Weekly status report</a>
+              <a href="https://microsoft.sharepoint.com/teams/LinesightDoccontrol/_layouts/15/Doc.aspx?sourcedoc=%7BF81C39E8-E369-4DEC-90F4-23C874D41C5F%7D&file=DUB40-41PEP%20presentation.pptx&action=edit&mobileredirect=true&DefaultItemOpen=1" target="_blank" rel="noopener">MSFT executive pack</a>
+              <a href="https://microsofteur.sharepoint.com/teams/DUBMetroProjectControlHub/_layouts/15/Doc.aspx?sourcedoc=%7BC2B7A28E-452F-4D1A-8A4E-141ED66D28B8%7D&file=Project%20Activity%20Tracker%20-%20DUB40-41.xlsx&action=default&mobileredirect=true&DefaultItemOpen=1" target="_blank" rel="noopener">Linesight PM report</a>
+            </div>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <footer>
+      <p>Tip: Switch to a dark look by adding <code>class="theme-dark"</code> to the <code>&lt;body&gt;</code> element.</p>
+    </footer>
+  </div>
+</body>
+</html>
